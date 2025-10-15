@@ -1,8 +1,17 @@
-# import requests
+import requests
+import os
+import json
+import datetime
+
+path = os.path.dirname(__file__)
 
 # pip instal requests
-# rub_rate_info = requests/get('http://')
-# rub_rate_info = rub_rate_info.json()[rates]
+# rub_rate_info = requests.get('http://')
+# rub_rate_info = rub_rate_info.json()['rates']
+# with open(path / 'rubles_rates.json', '+w') as file:
+#     data = json.load(file)
+#     current_date = datetime.now()
+#     if datetime.data['last_save_date']
 
 USD = 81.45
 EUR = 94.52
