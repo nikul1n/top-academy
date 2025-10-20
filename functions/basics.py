@@ -14,15 +14,17 @@ def greater_of_numbers(a, b):
     else: return b
 
 def listing_numbers_in_range(a, b):
-    for i in range(a, b+1):
-        print(i)
-    return None
+    print(*range(a,b))
+    # for i in range(a, b+1):
+    #     print(i)
+    # return None
     
 def sum_numbers_in_range(a, b):
-    sum = 0
-    for i in range(a, b+1):
-        sum += i
-    return sum
+    return sum(range(a, b))
+    # sum_ = 0
+    # for i in range(a, b+1):
+    #     sum_ += i
+    # return sum_
 
 def check_for_positive(a):
     if a >= 0: return True
@@ -74,3 +76,29 @@ print(f"большее из трёх: {greater_of_three_numbers(a,b,c)}")
 #     else: print("Год рождения не високосный")
 
 # test_leap_year()
+
+RED = "#ff0000"
+GREEN = "#00ff00"
+BLUE = "#0000ff"
+
+def chose_color():
+    print(
+        '1. Red' +
+        '2. Green' +
+        '3. Blue'
+    )
+
+    choise = input()
+    import os
+    # os.system('color 1F') 
+    match choise:
+        case '1':
+            return RED
+        case '2':
+            return GREEN
+        case '3':
+            return BLUE
+    return None
+
+def minmax(a,b):
+    return a, b if a > b else b, a
