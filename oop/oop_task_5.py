@@ -18,9 +18,10 @@ class Passport:
 passport = Passport(firstname='Pavel', lastname='Nikulin', patronymic='Andreevich',
                     birthday='14.01.1992', gender='male', place_birth='NCH', citizenship='RF')
 
+
 # ниже функциональные методы
-return all([visa.is_valid() for visa is self.visas]) #проверка что все элементы тру
-return any([visa.is_valid() for visa is self.visas]) #проверка что хоть один элемент тру
+# return all([visa.is_valid() for visa is self.visas]) #проверка что все элементы тру
+# return any([visa.is_valid() for visa is self.visas]) #проверка что хоть один элемент тру
 
 
 class ForeignPassport(Passport):

@@ -9,7 +9,7 @@ from datetime import datetime
 
 
 class Human:
-    def __init__(self, fio = "", birthday = "", phone_number = "", city = "", country = "", home_address = ""):
+    def __init__(self, fio = "", birthday = datetime.now(), phone_number = "", city = "", country = "", home_address = ""):
         self.fio = fio
         self.birthday = birthday
         self.phone_number = phone_number
