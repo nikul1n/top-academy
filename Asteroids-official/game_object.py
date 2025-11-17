@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 
 class GameObject(ABC):
     @abstractmethod
-    def update(self, game: 'Game') -> None:
+    def update(self):
         pass
 
     @abstractmethod
-    def draw(self, game):
+    def draw(self):
         pass
