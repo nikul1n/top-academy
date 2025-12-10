@@ -14,6 +14,7 @@ class Product(Base):
     name: Mapped[str] = mapped_column(String(255))
     price: Mapped[float] = mapped_column(nullable=False)
     quanitity: Mapped[int] = mapped_column(nullable=False) #количество
+    category_id: Mapped[int] = mapped_column(ForeignKey="categories.id")
     categories: Mapped[Optional["Category"]] = relationship(
         back_populates="products"
         )
