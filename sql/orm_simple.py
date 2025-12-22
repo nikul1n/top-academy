@@ -1,6 +1,7 @@
 # pip install sqlalchemy
 # pip install psycopg2
 # set client_encoding='win1251';
+# pip install SQLAlchemy
 
 from typing import List
 from typing import Optional
@@ -41,7 +42,7 @@ class Address(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("user_account.id"))
     user: Mapped["User"] = relationship(back_populates="addresses")    
 
-# Остаток цена название ид
+
 
     # Base.metadata.create_all(engine)
     # with Session(engine) as session:
