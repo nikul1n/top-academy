@@ -1,0 +1,29 @@
+.table {
+    /* display: grid; */ 
+    /* grid-template-columns:none; */
+    border-collapse:collapse;
+    border-color: black;
+} 
+
+
+.table td, .table th {
+    /* background-color: rgb(194, 194, 194); */
+    /* border: 1px dashed black; */
+    text-align: center;
+    /* color: ; */
+    width: 10%;
+    height: 40px;
+} 
+
+/* .table tbody tr { */
+/* } */
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: rgb(194, 194, 194);
+    border-bottom: 2px solid rgb(207, 207, 207);
+} 
+
+.table tfoot {
+    background-color: rgb(194, 194, 194);
+
+}
