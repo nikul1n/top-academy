@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    margin: 50px;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box {
+    width: 200px;
+    height: 100px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.container .box.green-box {
+    background-color: green;
+}
+.container .box.red-box {
+    background-color: red;
+}
+.container .box.blue-box {
+    background-color: blue;
+}
