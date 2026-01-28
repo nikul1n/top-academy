@@ -1,5 +1,7 @@
 :root {
     --max-page-width: 920px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 * {
@@ -15,17 +17,34 @@
 }
 
 header,
-footer,
 menu,
 nav {
     margin: 0 auto;
     display: flex;
     max-width: var(--max-page-width);
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
+    row-gap: 3vh;
+}
+
+header {
+    margin-top: 40px;
+}
+
+.phone {
+    padding-right: 25px;
+}
+
+.footer {
+    margin: 0 auto;
+    align-content: center;
+    max-width: var(--max-page-width);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 ul {
@@ -53,6 +72,11 @@ ul {
     gap: 1vh;
     padding: 10px;
     width: 30%;
+    border-radius: 5px;
+}
+
+.warehouse:hover {
+    box-shadow: 0 0 10px 1px black;
 }
 
 .warehouse:nth-child(1) {
@@ -78,6 +102,12 @@ ul {
 .nav__list li {
     display: inline-block;
     list-style: none;
+    padding-right: 20px;
+}
+
+.nav__list a {
+    border-bottom: 1px dashed rgba(0, 114, 188, 0.2);
+    text-decoration: none;
 }
 
 .header {
@@ -85,21 +115,101 @@ ul {
 }
 
 .intro {
-    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 160px;
     border-top: 1px dashed gold;
     border-bottom: 1px dashed gold;
 }
 
-.intro-number {
-    position: absolute;
-    background-color: aqua;
-    border-radius: 50%;
-    box-shadow:inset;
-    
+.intro span {
+    max-width: 33%;
+    margin: auto 0;
 }
 
-@media (max-width: 1024px) {}
+.intro-number {
+    display: block;
+    font: 190px/196px "Puchkomdigits", "Trebuchet MS", Helvetica, sans-serif;
+    /* position: absolute; */
+    top: 20;
+    left: -20;
+    width: 160px;
+    height: 160px;
+    background-color: rgb(176, 255, 169);
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #fff;
+    font-size: 85px;
+}
 
-@media (max-width: 768px) {}
+.big-picture {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5vh;
+}
 
-@media (max-width: 425px) {}
+.big-picture ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: small;
+    gap: 1vh;
+}
+
+/* 
+.big-picture li {
+    
+    width: 30%;
+} */
+
+.small-picture {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 2vh;
+    /* gap: 10vh;    */
+}
+
+.small-picture li {
+    width: 20%;
+
+
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header, .footer, .main__landing {
+    padding-left: 25px;
+    padding-right: 25px;
+    }
+    .warehouse {
+        min-width: 45%;
+    }
+
+}
+    
+
+@media (max-width: 767px) {
+    .header, .footer, .main__landing {
+    padding-left: 25px;
+    padding-right: 25px;
+    }
+        .warehouse {
+        min-width: 100%;
+    }
+
+    .small-picture {
+        width: 100%;
+    }
+
+    .small-picture li {
+    width: auto;
+}
+    
+}
