@@ -1,18 +1,36 @@
 "use strict";
 
+// Задание 4
+const x = +prompt("Введите координату x:");
+const y = +prompt("Введите координату y:");
+
+if (isNaN(x) || isNaN(y)) {
+    console.log("wrong input");
+} else {
+    if (x > 0 && y > 0) {
+        alert("Вы находитесь в первой четверти");
+    } else if (x < 0 && y > 0) {
+        alert("Вы находитесь во второй четверти");
+    } else if (x < 0 && y < 0) {
+        alert("Вы находитесь в третьей четверти");
+    } else if (x > 0 && y < 0) {
+        alert("Вы находитесь в четвёртой четверти");
+    } else {
+        alert("Вы попали на ось");
+    }
+}
+
+
 
 // Задание 4
 
-const [hours, minets, seconds] = prompt("Input time (HH:mm:ss):").split(':').map(Number)
+// const [hours, minets, seconds] = prompt("Input time (HH:mm:ss):").split(':').map(Number);
 
-
-const number = +prompt("input number:");
-
-if (isNaN(number)) {
-    console.log("wrong input");
-} else {
-    alert(Math.abs(number));
-}
+// if (isNaN(hours)|| isNaN(minets) || isNaN(seconds) || hours>23 || minets>59 || seconds>59) {
+//     console.log("wrong input");
+// } else {
+//     alert("Введённое время: " + hours + " часов " + minets + " минут " + seconds + " секунд");
+// }
 
 // Задание 3
 
