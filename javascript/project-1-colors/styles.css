@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.traffic-lights {
+    flex-direction: column;
+    border-radius: 30px;
+    background-color: black;
+    width: 60px;
+    height: 150px;
+}
+
+.red {
+    background-color: red;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.yellow {
+    background-color: yellow
+}
+
+.green {
+    background-color: green;
+}
+
+.light {
+    background-color: #444;
+}
