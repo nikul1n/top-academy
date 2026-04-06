@@ -3,23 +3,29 @@ class Company {
         this.staff = [];
     }
 
-    hireEmployee(employee) {
-        this.staff.push(employee);
-    }
+    hireEmployee = employee => this.staff.push(employee);
 
-    dismissEmployee(employee) {
-        this.staff.splice(employee);
+
+    dismissEmployee = employee => {
+        const temp = this.staff.indexOf(employee);
+        // console.log(temp);
+        console.log(`Сотрудник ${this.staff[temp].name} уволен`);
+        this.staff.splice(temp, 1);
+        // for (let i = 0; i <= this.staff.length; i++) {
+        //     if (i === temp) {
+        //         console.log(`Сотрудник ${this.staff[i].name} уволен`);
+        //         this.staff[i] = this.staff[this.staff.length-1];
+        //         this.staff.pop();
+        //     }
+        // }
+
     }
 
     displayStaff() {
-        // alert(this.staff);
-        for (let i = 0; i <= this.staff.length; i++) {
-            console.log(this.staff[i]);
 
-        }        // if (number % i === 0) {
-        //     isPrime = false;
-        //     break;
-        // }
+        for (let i = 0; i < this.staff.length; i++) {
+            this.staff[i].displayEmployee();
+        }
     }
 }
 
@@ -30,13 +36,11 @@ class Employee {
         this.specials = specials;
     }
 
-    displayEmployee(employee) {
-        console.log(`Сотрудник: ${this.name}, ${this.age} лет, специальность: ${this.specials}`);
-    }
+    displayEmployee = () => console.log(`Сотрудник: ${this.name}, ${this.age} лет, специальность: ${this.specials}`);
 }
 
 const company1 = new Company();
-const employee1 = new Employee('Ivan', 30, 'SEO');
+const employee1 = new Employee('Ivan', 30, 'CEO');
 const employee2 = new Employee('Sergey', 31, 'Accountant');
 const employee3 = new Employee('Pavel', 32, 'Commercial Director');
 company1.hireEmployee(employee1);
@@ -45,5 +49,4 @@ company1.hireEmployee(employee3);
 company1.displayStaff();
 company1.dismissEmployee(employee2);
 company1.displayStaff();
-
-// company1.displayStaff();
+console.log(company1.staff.includes(employee1));
