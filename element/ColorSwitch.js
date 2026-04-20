@@ -25,11 +25,7 @@ export class ColorSwitcher {
     addClickHandler() {
         // colorIndex = 0;
         this._element.addEventListener('click', () => {
-            this._colorIndex++;
-            if (this._colorIndex >= this._colors.length) {
-                this._colorIndex = 0;
-            }
-            this.setColor(this._colorIndex); // this._element.style.backgroundColor = this._colors[this.colorIndex];
+            this.setColor((this._colorIndex + 1) % this._colors.length); // this._element.style.backgroundColor = this._colors[this.colorIndex];
         });
     }
 
