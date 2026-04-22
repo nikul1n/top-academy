@@ -1,6 +1,9 @@
 "use strict";
 
-import { ColorSwitcher } from "./ColorSwitch.js";
+// import { ColorSwitcher } from "./ColorSwitch.js";
+import { GameContainer } from "./GameContainer.js";
+
+const gameElement = document.querySelector
 
 
 
