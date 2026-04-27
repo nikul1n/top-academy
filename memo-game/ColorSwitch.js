@@ -2,9 +2,9 @@ export class ColorSwitcher {
     constructor(element, colors, initialColorIndex) {
         this._element = element;
         this._colors = colors;
-        // this._colorIndex = initialColorIndex; // % ColorSwitcher.colors.length;
         this.setColor(initialColorIndex); // this._element.style.backgroundColor = this._colors[this.colorIndex];
-        this.addClickHandler();
+        // this.addClickHandler();
+        // this._colorIndex = initialColorIndex; // % ColorSwitcher.colors.length;
     }
 
 
