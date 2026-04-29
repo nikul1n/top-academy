@@ -4,8 +4,9 @@ import { ColorSwitcher } from "./ColorSwitch.js";
 import { GameContainer } from "./GameContainer.js";
 
 const gameElement = document.querySelector(".game");
-const game = new GameContainer(gameElement, 5, 4, 5);
+const game = new GameContainer(gameElement, 5, 4, 10);
 game.initialize();
+game.appendDefaulChildren();
 
 
 // const blocksList = document.querySelector(".blocks-list");
