@@ -2,11 +2,11 @@
 
 const btnOpenModal = document.querySelector("[data-open-modal]");
 const btnCloseModal = document.querySelector("[data-close-modal]");
-const btnSaveEmpl = document.querySelector(".btn.save-employee");
+const btnSaveEmpl = document.querySelector(".save-employee");
 const cardOpenEmpl = document.querySelector(".list-employee");
+const cardSaveForm = document.querySelector('.card-save-form');
 
 const modal = document.getElementById("modal");
-const cardSaveForm = document.querySelector('.card-save-form');
 
 let cardFieldsElementsToEdit = null;
 
@@ -25,16 +25,18 @@ cardOpenEmpl.addEventListener('click', (event) => {
     modal.classList.toggle('active');
 
     const cardNameInput = cardSaveForm.querySelector("[name='name']")
-    const cardRoleInput = cardSaveForm.querySelector("[name='role']") 
+    const cardRoleInput = cardSaveForm.querySelector("[name='role']")
     const cardContactInput = cardSaveForm.querySelector("[name='contact']")
-    const cardName = card.querySelector('.name');
-    const cardName = card.querySelector('.name');
-    const cardName = card.querySelector('.name');
-    cardName.value = cardNameInput.textContent;
-    cardRoleInput.textContent = cardRoleInput.value;
-    cardContactInput.textContent = cardContactInput.value;
 
-    cardFieldsElementsToEdit = {name: cardNameInput, role: cardRoleInput, contact: cardContactInput};
+    const cardName = card.querySelector('.name');
+    const cardRole = card.querySelector('.role');
+    const cardContact = card.querySelector('.contact');
+
+    cardNameInput.value = cardName.textContent;
+    cardRoleInput.value = cardRole.textContent;
+    cardContactInput.value = cardContact.textContent;
+
+    cardFieldsElementsToEdit = { name: cardName, role: cardRole, contact: cardContact };
 });
 
 const gridEmpl = document.querySelector(".list-employee");
@@ -43,21 +45,26 @@ btnSaveEmpl.addEventListener('click', (event) => {
     event.preventDefault();
     if (!cardFieldsElementsToEdit) {
         cardFieldsElementsToEdit = createEmployee();
-    } else {
     }
     updateCardFieldsByInputs(cardFieldsElementsToEdit);
+    cardFieldsElementsToEdit = null;
+    modal.classList.toggle('active');
 });
 
 function updateCardFieldsByInputs(cardFields) {
-    const inputName = cardSaveForm.newEmployee.name;
+    const inputName = document.querySelector("[name='name']")
     cardFields.name.textContent = inputName.value;
-
-    const inputRole = cardSaveForm.newEmployee.role;
+    inputName.value = "";
+    
+    const inputRole = document.querySelector("[name='role']");
     cardFields.role.textContent = inputRole.value;
-
-    const inputContact = cardSaveForm.newEmployee.contact;
+    inputRole.value = "";
+    
+    const inputContact = document.querySelector("[name='contact']");
     cardFields.contact.textContent = inputContact.value;
+    inputContact.value = "";
 }
+
 
 function createEmployee() {
     const newEmployee = document.createElement('div');
@@ -66,16 +73,8 @@ function createEmployee() {
     const cardContact = document.createElement('div');
 
     cardName.classList.add("name");
-    const inputName = document.querySelector("[name='name']")
-    cardName.textContent = inputName.value;
-
     cardRole.classList.add("role");
-    const inputRole = document.querySelector("[name='role']")
-    cardRole.textContent = inputRole.value;
-
     cardContact.classList.add("contact");
-    const inputContact = document.querySelector("[name='contact']")
-    cardContact.textContent = inputContact.value;
 
     newEmployee.classList.add('card');
     gridEmpl.appendChild(newEmployee);
