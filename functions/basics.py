@@ -52,7 +52,7 @@ a = int(input("Число a: "))
 b = int(input("Число b: "))
 c = int(input("Число c: "))
 
-print(f"сумма чисел: {sum_digits(a, b)}")
+print(f"сумма первых двух чисел: {sum_digits(a, b)}")
 print(f"а в квадрате: {power_of_number(a)}")
 print(f"площадь круга с радиусом b: {area_of_circle(b)}")
 print(f"большее число: {greater_of_numbers(a,b)}")

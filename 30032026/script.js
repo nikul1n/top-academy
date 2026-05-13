@@ -42,15 +42,15 @@ function renderUsers(users) {
     statusText.textContent = 'No users found.';
     return;
   }
-  
+
   statusText.textContent = `Found ${users.length} user(s).`;
-  
+
   users.forEach(user => {
     const li = document.createElement('li');
     li.className = 'user-item';
-    
+
     const avatarData = user.image || `https://ui-avatars.com/api/?name=${user.firstName}+${user.lastName}&background=random`;
-    
+
     li.innerHTML = `
       <img class="avatar" src="${avatarData}" alt="Avatar">
       <div class="user-info">
@@ -58,11 +58,13 @@ function renderUsers(users) {
         <p>${user.email} • ${user.company?.title || 'Employee'}</p>
       </div>
     `;
-    
+    async function name(params) {
+
+    }
     li.addEventListener('click', () => {
       alert(`Selected: ${user.firstName} ${user.lastName}\nPhone: ${user.phone}`);
     });
-    
+
     resultsList.appendChild(li);
   });
 }
@@ -71,7 +73,7 @@ async function performSearch(query) {
   if (currentAbortController) {
     currentAbortController.abort();
   }
-  
+
   currentAbortController = new AbortController();
   statusText.textContent = 'Searching...';
   resultsList.innerHTML = '';
@@ -80,13 +82,13 @@ async function performSearch(query) {
     const response = await fetch(`https://dummyjson.com/users/search?q=${encodeURIComponent(query)}&limit=5`, {
       signal: currentAbortController.signal
     });
-    
+
     if (!response.ok) throw new Error('Network response was not ok');
-    
+
     const data = await response.json();
     renderUsers(data.users);
   } catch (error) {
-    if (error.name === 'AbortError') return; 
+    if (error.name === 'AbortError') return;
     statusText.textContent = 'An error occurred while fetching results.';
     console.error('Fetch error:', error);
   }
@@ -94,19 +96,19 @@ async function performSearch(query) {
 
 searchInput.addEventListener('input', (event) => {
   const query = event.target.value.trim();
-  
+
   clearTimeout(debounceTimeout);
-  
+
   if (!query) {
     if (currentAbortController) currentAbortController.abort();
     statusText.textContent = '';
     resultsList.innerHTML = '';
     return;
   }
-  
+
   statusText.textContent = 'Waiting for you to stop typing...';
-  
+
   debounceTimeout = setTimeout(() => {
     performSearch(query);
-  }, 400); 
+  }, 400);
 });
