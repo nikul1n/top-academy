@@ -45,7 +45,7 @@ export class Notification {
         this._element.appendChild(btnClose);
 
         btnClose.addEventListener('click', () => {
-           this._element.style.display = 'none';
+           this._element.remove();
         });
 
     }
