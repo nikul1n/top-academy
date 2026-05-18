@@ -1,7 +1,9 @@
 import { Notification, NotificationType } from "./Notifier/notification.js";
+import { notifier } from "./Notifier/notifier.js";
 
-const element = document.createElement('div');
+// const element = document.createElement('div');
 
-const notification = new Notification(element, NotificationType.WARNING,"123123123123123");
-notification.initElement();
-document.body.appendChild(element);
+notifier.showNotifier(NotificationType.WARNING, "235235adsgaerg");
+notifier.showNotifier(NotificationType.ERROR, "235235adsgaerg");
+notifier.showNotifier(NotificationType.SUCCESS, "235235adsgaerg");
+notifier.showNotifier(NotificationType.INFO, "235235adsgaerg");

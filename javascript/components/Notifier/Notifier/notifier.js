@@ -1,13 +1,27 @@
 // TODO: панелька с уведомлениями 
-import {Notification} from "notification.js"
+import { Notification, NotificationType } from "./notification.js"
 
-class Notifier {
+export class Notifier {
     constructor(element) {
         this._element = element;
     }
 
-    showWarning(text) {
-        new Notification(document.createElement(), Notification.types.warning);
+    showNotifier(notificationType, text) {
+        const item = document.createElement('li');
+        const notification = new Notification(item, notificationType, text);
+        notification.initElement();
+        this._element.appendChild(item);
     }
 }
 
+function createNotifierAttached() {
+    const boxNotifier = document.createElement('ul');
+    boxNotifier.className = 'Notifier';
+
+    document.body.appendChild(boxNotifier);
+
+
+    return new Notifier(boxNotifier);
+}
+
+export const notifier = createNotifierAttached();

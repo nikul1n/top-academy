@@ -31,9 +31,26 @@ export class Notification {
     }
 
     initElement() {
+        
+        // const textElement = document.createElement('div');
+        // textElement.className = `Notification ${this._getTypeClassName()} `;
+        // textElement.textContent = this._text;
+        
         this._element.className = `Notification ${this._getTypeClassName()} `;
         this._element.textContent = this._text;
+
+        const btnClose = document.createElement('button');
+        btnClose.innerHTML = "&times;";
+        btnClose.className = 'button-close-notification';
+        this._element.appendChild(btnClose);
+
+        btnClose.addEventListener('click', () => {
+           this._element.style.display = 'none';
+        });
+
     }
+
+    // Notification.btnClose.addEventListener('click', () => {
 
     _getTypeClassName() {
         switch (this._type) {
