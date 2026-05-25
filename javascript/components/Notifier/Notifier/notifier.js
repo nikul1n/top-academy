@@ -6,11 +6,15 @@ export class Notifier {
         this._element = element;
     }
 
-    showNotifier(notificationType, text) {
+    setDefaulTimeout(ms) {
+        this._defaultTime = ms;
+    }
+    showNotifier(notificationType, text, timeoutMs = null) {
         const item = document.createElement('li');
-        const notification = new Notification(item, notificationType, text);
+        const notification = new Notification(item, notificationType, text, timeoutMs ?? this._defaultTime);
         notification.initElement();
         this._element.appendChild(item);
+
     }
 }
 

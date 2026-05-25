@@ -15,11 +15,13 @@ export class Notification {
      * @param {HTMLElement} element 
      * @param {NotificationType} type 
      * @param {string} text 
+     * @param {digit} timeoutMs 
      */
-    constructor(element, type, text) {
+    constructor(element, type, text, timeoutMs) {
         this._element = element;
         this._type = type;
         this._text = text;
+        this._timeoutMs = timeoutMs;
     }
 
     show(params) {
