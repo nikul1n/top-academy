@@ -1,4 +1,4 @@
-export class Element {
+export class CarouselItem {
     /**
      * @param {HTMLElement} element 
      * @param {string} title 
@@ -25,5 +25,13 @@ export class Element {
 
         this._element.appendChild(title);
         this._element.appendChild(description);
+    }
+
+    show(){
+        this._element.classList.add('active');
+    }
+
+    hide() {
+        this._element.classList.remove('active');
     }
 }

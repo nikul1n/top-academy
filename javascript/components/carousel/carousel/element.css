@@ -1,6 +1,12 @@
 .item-carousel {
+    width: 90%;
+    display: none;
     border: 2px solid black;
     border-radius: 5px;
     text-align: left;
     padding: 10px;
+}
+
+.item-carousel.active {
+    display: block;
 }
