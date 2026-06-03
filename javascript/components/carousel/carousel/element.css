@@ -1,12 +1,24 @@
 .item-carousel {
-    width: 90%;
+    width: initial;
     display: none;
     border: 2px solid black;
     border-radius: 5px;
     text-align: left;
     padding: 10px;
+    transform: translateX(-200%);
+    /* Элемент смещается за пределы экрана */
+    transition: transform 1s ease-out;
+    /* Переходная анимация */
 }
 
 .item-carousel.active {
     display: block;
+    transform: translateX(0);
+    transition: all 0.9s ease-out; 
+
+    /* Возвращение в исходное положение */
+}
+
+.item-image {
+    width: 100%;
 }

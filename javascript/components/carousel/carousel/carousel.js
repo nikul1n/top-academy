@@ -9,7 +9,16 @@ export class Carousel {
         /** @type {Array<CarouselItem>} */
         this._items = [];
         this._index = null;
+        this._switchTimeout = 3000;
+
+        if (this._switchTimeout != null) {
+            setInterval(() => {
+                this.nextItem();
+            }, this._switchTimeout)
+        };
     }
+
+
 
     switchItem(index) {
         if (index < 0 || index >= this._items.length)
@@ -33,21 +42,29 @@ export class Carousel {
 
     createElement(title, description, image) {
         const itemElement = document.createElement('div');
-        // item.className('item-carousel');
         const item = new CarouselItem(itemElement, title, description, image);
         item.initElement();
         this._element.appendChild(itemElement);
         this._items.push(item);
     }
 
-    _onLeftClick() {
+    // switchToDirection() {
 
-    }
-    _onRightClick() {
-        const leftButton = document.querySelector('.left-button');
-        leftButton.addEventListener('click', () => {
-            this._element.remove();
-        });
+    //     if (this._index === this._items.length - 1) {
+    //         this._items.push(this._items[0]);
+    //     }
+        // this._index += shift < 0 ? -1 : 1;
+        // this._element.style.left = `-${this._index * 100}%`;
+    // }
 
-    }
+    // _onLeftClick() {
+
+    // }
+    // _onRightClick() {
+    //     const leftButton = document.querySelector('.left-button');
+    //     leftButton.addEventListener('click', () => {
+    //         this._element.remove();
+    //     });
+
+    // }
 }

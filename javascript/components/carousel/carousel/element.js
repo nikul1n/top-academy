@@ -3,7 +3,7 @@ export class CarouselItem {
      * @param {HTMLElement} element 
      * @param {string} title 
      * @param {string} description
-     * @param {*} image 
+     * @param {src} image 
      */
     constructor(element, title, description, image) {
         this._element = element;
@@ -23,8 +23,13 @@ export class CarouselItem {
         description.className = `item-description`;
         description.textContent = this._description;
 
+        const image = document.createElement('img');
+        image.className = `item-image`;
+        image.src = this._image;
+
         this._element.appendChild(title);
         this._element.appendChild(description);
+        this._element.appendChild(image);
     }
 
     show(){
