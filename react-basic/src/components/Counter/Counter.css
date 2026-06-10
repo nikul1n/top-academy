@@ -1,0 +1,17 @@
+.Counter {
+    background-color: #ffffff;
+    width: 100px;
+    height: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px #000 groove;
+
+}
+
+.Counter:hover {
+    background-color: #a68c8c;
+    cursor: pointer;
+}
+
+.Counter_flashed {
+    display:inherit;
+}
