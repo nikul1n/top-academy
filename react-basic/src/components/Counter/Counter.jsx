@@ -1,23 +1,20 @@
 import { useState } from "react"
 import './Counter.css'
-import { useEffect } from "react"
 import { useRef } from "react";
 
 function Counter({ state }) {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0) //когда меняется состояние происходит отрисовка. Поменять состояние можно только сеттером (через set???)
     const [isFlashed, setFlashed] = useState(false);
-    const flashTimeoutId = useRef(null);
+    const flashTimeoutId = useRef(null); //ссылка на объект который сохраняется между отрисовками (рендерами)
     console.log(`render ${count} ${state}`);
 
 
     // useEffect(() => {
-    //     // setCount(count + 1)
-    //     // console.log("hello")
     //     setFlashed((isFlashed) => !isFlashed);
 
 
     //     return () => {
-    // clearTimeout(timeoutId);
+    //         clearTimeout(timeoutId);
     //     };
     // }, [count]);
 
@@ -27,21 +24,21 @@ function Counter({ state }) {
         clearTimeout(flashTimeoutId.current);
 
         flashTimeoutId.current = setTimeout(() => {
-            setFlashed((isFlashed) => !isFlashed);
+            setFlashed((isFlashed) => !isFlashed); // isLoading
         }, 1000)
     }
-        return (
+    return (
 
-            <button
-                type="button"
-                className={`Counter ${isFlashed ? 'Counter_flashed' : ''}`}
-                onClick={increment}
-            >
-                Count is {count}
-            </button>
-        )
+        <button
+            type="button"
+            className={`Counter ${isFlashed ? 'Counter_flashed' : ''}`}
+            onClick={increment}
+        >
+            Count is {count}
+        </button>
+    )
 
-    
+
 }
 
 export default Counter
