@@ -7,8 +7,6 @@ import useDataLoading from '../../hooks/useDataLoading.js';
 function EmployeesList() {
     const { data: employee, error, isLoading } = useDataLoading(["http://192.168.110.58/employees"]);
 
-
-
     return (
         <section className="employees-list">
             <ul>
