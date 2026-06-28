@@ -1,0 +1,23 @@
+.product-item {
+    /* max-width: 150px;
+    max-height: 100px; */
+    padding: 10px;
+    background-image: linear-gradient(to right bottom, darkblue, black);  
+}
+
+.product-name {
+    text-align: center;
+    font-size: large;
+    font-style: italic;
+}
+
+.product-price {
+    text-align: left;
+    font-size: medium;
+    font-style: oblique;
+}
+
+img {
+    max-width: 100px;
+    max-height: 150px;
+}

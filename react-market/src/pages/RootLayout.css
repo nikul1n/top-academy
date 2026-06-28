@@ -1,0 +1,15 @@
+.active {
+    background-color: aqua;
+    border: 2px solid black;
+}
+
+.pending {
+ background-color: blue;
+}
+
+.nav-links {
+    display: flex;
+    border: 2px solid gray;
+    padding: 5px;
+    gap: 10px;
+}
