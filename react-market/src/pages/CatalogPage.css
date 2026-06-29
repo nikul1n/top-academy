@@ -1,6 +1,13 @@
-/* ul{
-    list-style: none;
-} */
+ul {
+    box-sizing: border-box;
+    display: flex;
+    gap: 10%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
 
 .products-list {
     display: flex;

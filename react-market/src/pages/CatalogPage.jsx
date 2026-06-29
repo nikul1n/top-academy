@@ -1,57 +1,47 @@
-import Product from "./Product"
 import "./CatalogPage.css"
-import { Link } from "react-router"
+import { Link, useLoaderData } from "react-router"
+import ProductPage from "./ProductPage";
+import { preinitModule } from "react-dom";
+// import { ProductsAPI } from "../../API/ProductsAPI.js"
 
 function CatalogPage() {
-    // <div></div>
-    const products =
-        [{
-            id: 1,
-            name: "iphone",
-            price: 100,
-            image: "./images/orig.png"
-        },
-        {
-            id: 2,
-            name: "samsung",
-            price: 100,
-            image: `./images/1047076_r6354.jpg`
-        },
-        {
-            id: 3,
-            name: "huawei",
-            price: 100,
-            image: "./images/358.webp"
-        }]
-
+    const products = useLoaderData();
     return (
         <section className="products-list">
             <ul>
-
-                {products?.map((products) => (
-                    <Link to={`/products/${products.id}`}>
+                {products.map((product) => (
+                    <Link to={`/products/${product.id}`}>
                         <article>
-                            <Product {...products} />
+                            <span>{product.title}</span>
+                            <div><img src={`${product.image}`} alt="" /> </div>
                         </article>
                     </Link>)
                 )}
             </ul>
         </section>
     )
-
-    // while (products) {
-    //     <div>
-    //         <ul>
-    //             <li>
-    //         {/* return (
-    //             ${products}
-    //     ) */}
-    //             </li>
-    //         </ul>
-    //     </div>
-    // }
-
-
 }
 
 export default CatalogPage
+
+
+
+    // const products =
+    //     [{
+    //         id: 1,
+    //         name: "iphone",
+    //         price: 100,
+    //         image: "./images/orig.png"
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "samsung",
+    //         price: 100,
+    //         image: `./images/1047076_r6354.jpg`
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "huawei",
+    //         price: 100,
+    //         image: "./images/358.webp"
+    //     }]
